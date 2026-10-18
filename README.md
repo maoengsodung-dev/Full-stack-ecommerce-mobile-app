@@ -2,7 +2,7 @@
 
 [![Flutter](https://img.shields.io/badge/Flutter-%5E3.10.4-blue.svg?logo=flutter)](https://flutter.dev)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg?logo=laravel)](https://laravel.com)
-[![GetX](https://img.shields.io/badge/Architecture-GetX-brightgreen.svg)](./architecture_getx/README.md)
+[![GetX](https://img.shields.io/badge/Architecture-GetX-brightgreen.svg)](./ecommerce_getx/README.md)
 [![Riverpod](https://img.shields.io/badge/Architecture-Riverpod%202.x-0553B1.svg)](./ecommerce_riverpod/README.md)
 [![Payment](<https://img.shields.io/badge/Payment-ABA%20PayWay%20(KHQR)-005F86.svg>)](https://www.ababank.com)
 [![Firebase](https://img.shields.io/badge/Firebase-FCM%20%7C%20Auth%20%7C%20Firestore-orange.svg?logo=firebase)](https://firebase.google.com)
@@ -17,7 +17,7 @@ Each component within this monorepo has its own comprehensive documentation:
 
 | Project                                                        | Technology                        | Details & Architecture                                                                           |                     Readme Link                      |
 | :------------------------------------------------------------- | :-------------------------------- | :----------------------------------------------------------------------------------------------- | :--------------------------------------------------: |
-| [📱 **`architecture_getx/`**](./architecture_getx/README.md)   | Flutter 3.10+, GetX, Dio          | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay.  | [📖 **View Readme**](./architecture_getx/README.md)  |
+| [📱 **`ecommerce_getx/`**](./ecommerce_getx/README.md)         | Flutter 3.10+, GetX, Dio          | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay.  | [📖 **View Readme**](./ecommerce_getx/README.md)    |
 | [📱 **`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) | Flutter 3.10+, Riverpod 2.x, Dio  | Riverpod Notifiers, Immutable State, Clean Architecture + Feature-First (DDD), and Route Guards. | [📖 **View Readme**](./ecommerce_riverpod/README.md) |
 | [🌐 **`ecommerce-backend/`**](./ecommerce-backend/README.md)   | Laravel 11, PHP 8.3, MySQL, Redis | Full REST API, Sanctum Auth, Spatie Roles, FCM Notifications, PayWay Webhooks, and Docker.       | [📖 **View Readme**](./ecommerce-backend/README.md)  |
 
@@ -27,8 +27,8 @@ Each component within this monorepo has its own comprehensive documentation:
 
 Click any project link below to view its complete documentation:
 
-- 📱 [**`architecture_getx/`**](./architecture_getx/README.md) — _Flutter Mobile App (GetX Clean Architecture)_  
-  👉 **[📖 Open `architecture_getx/README.md`](./architecture_getx/README.md)**
+- 📱 [**`ecommerce_getx/`**](./ecommerce_getx/README.md) — _Flutter Mobile App (GetX Clean Architecture)_  
+  👉 **[📖 Open `ecommerce_getx/README.md`](./ecommerce_getx/README.md)**
 
 - 📱 [**`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) — _Flutter Mobile App (Riverpod 2.x Feature-First Architecture)_  
   👉 **[📖 Open `ecommerce_riverpod/README.md`](./ecommerce_riverpod/README.md)**
@@ -78,20 +78,64 @@ Click any project link below to view its complete documentation:
 
 ### 1. Backend Setup ([`ecommerce-backend/`](./ecommerce-backend/README.md))
 
+You can run the backend using **Docker** (recommended for isolated, containerized setup) or **locally via PHP & Composer**.
+
+#### 🐳 Option A: Using Docker (Recommended)
+
+Spins up the full stack: **PHP 8.4 (Laravel 11)**, **MySQL 8**, **Redis 7**, **Nginx**, and **Horizon Queue Worker**.
+
+```bash
+cd ecommerce-backend
+
+# 1. Copy Docker environment variables
+cp .env.docker .env
+
+# 2. Build and launch containers in detached mode
+docker compose up -d --build
+
+# 3. Generate application encryption key
+docker compose exec app php artisan key:generate
+
+# 4. Run database migrations and seed default data
+docker compose exec app php artisan migrate:fresh --seed
+
+# 5. Create storage symlink for uploaded product images
+docker compose exec app php artisan storage:link
+```
+
+> **Makefile Alternative:**
+> ```bash
+> cd ecommerce-backend
+> make dev-build
+> make dev-up
+> ```
+>
+> **Access URLs & Services:**
+> - **REST API**: `http://localhost:8000/api/v1`
+> - **Horizon Dashboard**: `http://localhost:8000/horizon`
+> - **MySQL**: `localhost:3307` (user: `root`, password: `root`, db: `ecommerce`)
+> - **Redis**: `localhost:6379`
+> - **Default Admin**: `admin@example.com` / `Admin123!`
+
+#### 💻 Option B: Local Setup (PHP & Composer)
+
+If you have PHP 8.3+, Composer, MySQL, and Redis installed directly on your machine:
+
 ```bash
 cd ecommerce-backend
 composer install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate --seed
+php artisan storage:link
 php artisan serve
 ```
 
-### 2. Mobile App Setup ([`architecture_getx/`](./architecture_getx/README.md) or [`ecommerce_riverpod/`](./ecommerce_riverpod/README.md))
+### 2. Mobile App Setup ([`ecommerce_getx/`](./ecommerce_getx/README.md) or [`ecommerce_riverpod/`](./ecommerce_riverpod/README.md))
 
 ```bash
 # Choose either client:
-cd architecture_getx
+cd ecommerce_getx
 # or: cd ecommerce_riverpod
 
 # Setup environment

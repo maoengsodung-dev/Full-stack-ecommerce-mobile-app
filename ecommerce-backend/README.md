@@ -195,6 +195,31 @@ based on `APP_ENV` and explicit `PAYWAY_MODE` / `FCM_MODE` overrides.
 
 ## Setup
 
+### Option A: Using Docker (Recommended)
+
+Run the entire stack (Laravel, PHP 8.4, MySQL 8, Redis 7, Nginx, Horizon) without needing PHP or Composer installed locally:
+
+```bash
+# 1. Environment configuration
+cp .env.docker .env
+
+# 2. Build and start containers
+docker compose up -d --build
+
+# 3. Generate key, migrate database with seeders, and link storage
+docker compose exec app php artisan key:generate
+docker compose exec app php artisan migrate:fresh --seed
+docker compose exec app php artisan storage:link
+```
+
+> Or using the Makefile:
+> ```bash
+> make dev-build
+> make dev-up
+> ```
+
+### Option B: Local Setup (PHP & Composer)
+
 ```bash
 cp .env.example .env
 composer install
