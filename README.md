@@ -4,7 +4,7 @@
 [![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg?logo=laravel)](https://laravel.com)
 [![GetX](https://img.shields.io/badge/Architecture-GetX-brightgreen.svg)](./architecture_getx/README.md)
 [![Riverpod](https://img.shields.io/badge/Architecture-Riverpod%202.x-0553B1.svg)](./ecommerce_riverpod/README.md)
-[![Payment](https://img.shields.io/badge/Payment-ABA%20PayWay%20(KHQR)-005F86.svg)](https://www.ababank.com)
+[![Payment](<https://img.shields.io/badge/Payment-ABA%20PayWay%20(KHQR)-005F86.svg>)](https://www.ababank.com)
 [![Firebase](https://img.shields.io/badge/Firebase-FCM%20%7C%20Auth%20%7C%20Firestore-orange.svg?logo=firebase)](https://firebase.google.com)
 
 A complete, production-ready **Full-Stack E-Commerce Suite** consisting of two modern Flutter mobile client architectures (GetX and Riverpod) and a robust Laravel 11 REST API backend.
@@ -15,11 +15,11 @@ A complete, production-ready **Full-Stack E-Commerce Suite** consisting of two m
 
 Each component within this monorepo has its own comprehensive documentation:
 
-| Project | Technology | Details & Architecture | Readme Link |
-| :--- | :--- | :--- | :---: |
-| [📱 **`architecture_getx/`**](./architecture_getx/README.md) | Flutter 3.10+, GetX, Dio | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay. | [📖 **View Readme**](./architecture_getx/README.md) |
-| [📱 **`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) | Flutter 3.10+, Riverpod 2.x, Dio | Riverpod Notifiers, Immutable State, Clean Architecture + Feature-First (DDD), and Route Guards. | [📖 **View Readme**](./ecommerce_riverpod/README.md) |
-| [🌐 **`ecommerce-backend/`**](./ecommerce-backend/README.md) | Laravel 11, PHP 8.3, MySQL, Redis | Full REST API, Sanctum Auth, Spatie Roles, FCM Notifications, PayWay Webhooks, and Docker. | [📖 **View Readme**](./ecommerce-backend/README.md) |
+| Project                                                        | Technology                        | Details & Architecture                                                                           |                     Readme Link                      |
+| :------------------------------------------------------------- | :-------------------------------- | :----------------------------------------------------------------------------------------------- | :--------------------------------------------------: |
+| [📱 **`architecture_getx/`**](./architecture_getx/README.md)   | Flutter 3.10+, GetX, Dio          | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay.  | [📖 **View Readme**](./architecture_getx/README.md)  |
+| [📱 **`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) | Flutter 3.10+, Riverpod 2.x, Dio  | Riverpod Notifiers, Immutable State, Clean Architecture + Feature-First (DDD), and Route Guards. | [📖 **View Readme**](./ecommerce_riverpod/README.md) |
+| [🌐 **`ecommerce-backend/`**](./ecommerce-backend/README.md)   | Laravel 11, PHP 8.3, MySQL, Redis | Full REST API, Sanctum Auth, Spatie Roles, FCM Notifications, PayWay Webhooks, and Docker.       | [📖 **View Readme**](./ecommerce-backend/README.md)  |
 
 ---
 
@@ -27,13 +27,13 @@ Each component within this monorepo has its own comprehensive documentation:
 
 Click any project link below to view its complete documentation:
 
-- 📱 [**`architecture_getx/`**](./architecture_getx/README.md) — *Flutter Mobile App (GetX Clean Architecture)*  
+- 📱 [**`architecture_getx/`**](./architecture_getx/README.md) — _Flutter Mobile App (GetX Clean Architecture)_  
   👉 **[📖 Open `architecture_getx/README.md`](./architecture_getx/README.md)**
 
-- 📱 [**`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) — *Flutter Mobile App (Riverpod 2.x Feature-First Architecture)*  
+- 📱 [**`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) — _Flutter Mobile App (Riverpod 2.x Feature-First Architecture)_  
   👉 **[📖 Open `ecommerce_riverpod/README.md`](./ecommerce_riverpod/README.md)**
 
-- 🌐 [**`ecommerce-backend/`**](./ecommerce-backend/README.md) — *Backend REST API (Laravel 11, MySQL, Redis, Docker)*  
+- 🌐 [**`ecommerce-backend/`**](./ecommerce-backend/README.md) — _Backend REST API (Laravel 11, MySQL, Redis, Docker)_  
   👉 **[📖 Open `ecommerce-backend/README.md`](./ecommerce-backend/README.md)**
 
 ---
