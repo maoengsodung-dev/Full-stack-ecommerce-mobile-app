@@ -1,0 +1,6 @@
+[2026-08-28 15:47:04] local.INFO: PayWay payment initiated {"order_id":12,"tran_id":"828-3KUCAAQDCLZJ","order_amount":"78.00","order_currency":"USD","payway_amount":"78.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-28 16:04:36] local.INFO: PayWay payment initiated {"order_id":13,"tran_id":"828-UNQGSXXYKGO1","order_amount":"39.00","order_currency":"USD","payway_amount":"39.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-28 16:08:55] local.INFO: PayWay payment initiated {"order_id":14,"tran_id":"828-XMZI1FZZWSP2","order_amount":"39.00","order_currency":"USD","payway_amount":"39.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-28 16:09:31] local.INFO: PayWay payment initiated {"order_id":15,"tran_id":"828-JYNUW2SB590C","order_amount":"39.00","order_currency":"USD","payway_amount":"39.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-28 17:05:24] local.INFO: PayWay payment initiated {"order_id":16,"tran_id":"828-HPFMPLYRBHKS","order_amount":"78.00","order_currency":"USD","payway_amount":"78.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-28 17:07:21] local.INFO: PayWay payment initiated {"order_id":17,"tran_id":"828-YK4QFVBVSYX5","order_amount":"138.00","order_currency":"USD","payway_amount":"138.00","payway_currency":"USD","mode":"sandbox"} 

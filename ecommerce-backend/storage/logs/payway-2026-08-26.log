@@ -1,0 +1,1 @@
+[2026-08-26 14:22:09] local.INFO: PayWay payment initiated {"order_id":2,"tran_id":"826-WMJXQPPBSGZI","order_amount":"78.00","order_currency":"USD","payway_amount":"78.00","payway_currency":"USD","mode":"sandbox"} 

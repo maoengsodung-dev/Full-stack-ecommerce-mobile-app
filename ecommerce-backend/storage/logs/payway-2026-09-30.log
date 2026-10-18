@@ -1,0 +1,1 @@
+[2026-09-30 07:33:32] local.INFO: PayWay payment initiated {"order_id":20,"tran_id":"930-APHNCMSUDMXO","order_amount":"32.97","order_currency":"USD","payway_amount":"32.97","payway_currency":"USD","mode":"sandbox"} 

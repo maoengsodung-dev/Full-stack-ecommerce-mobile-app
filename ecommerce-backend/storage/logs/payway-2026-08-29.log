@@ -1,0 +1,245 @@
+[2026-08-29 08:09:01] local.INFO: PayWay payment initiated {"order_id":18,"tran_id":"829-IRPW1ZRSOOSW","order_amount":"78.00","order_currency":"USD","payway_amount":"78.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-29 09:10:36] local.INFO: PayWay payment initiated {"order_id":19,"tran_id":"829-QZMIMD6R9LSB","order_amount":"78.00","order_currency":"USD","payway_amount":"78.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-08-29 09:12:00] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 09:12:04] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 09:12:26] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 14:36:13] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 14:36:16] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 14:44:25] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 14:44:54] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:07:11] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:39:54] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:39:58] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:40:00] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:40:50] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:44:20] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"9e55c7c4b4d9488a96db","apv":"832865","status":"0","return_params":"{\"order_id\":\"123\"}","merchant_ref":""} 
+[2026-08-29 15:44:32] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":""} 
+[2026-08-29 15:45:10] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":""} 
+[2026-08-29 15:45:32] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":""} 
+[2026-08-29 15:45:54] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-08-29 15:47:07] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":null} 
+[2026-08-29 15:48:01] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":null} 
+[2026-08-29 15:48:33] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":null} 
+[2026-08-29 15:49:12] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":null} 
+[2026-08-29 15:50:20] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"17394277693","apv":"753786","status":"0","return_params":"{\"order_id\":1}","merchant_ref":null} 
+[2026-08-29 15:54:52] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 15:55:24] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 15:55:26] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 15:55:45] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 15:56:43] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:01:27] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:01:29] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:01:35] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:01:46] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:01:52] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:02:21] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:02:29] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:02:56] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:03:51] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:10:47] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:11:00] local.WARNING: Webhook hash verification failed {"tran_id":"e17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:11:05] local.WARNING: Webhook hash verification failed {"tran_id":"e17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:11:14] local.WARNING: Webhook hash verification failed {"tran_id":"e17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:11:21] local.WARNING: Webhook hash verification failed {"tran_id":"e17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:11:37] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:11:40] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:14:08] local.WARNING: Webhook hash verification failed {"tran_id":"9e55c7c4b4d9488a96db","ip":"172.19.0.1"} 
+[2026-08-29 16:14:16] local.WARNING: Webhook hash verification failed {"tran_id":"9e55c7c4b4d9488a96db","ip":"172.19.0.1"} 
+[2026-08-29 16:15:59] local.WARNING: Webhook hash verification failed {"tran_id":"9e55c7c4b4d9488a96db","ip":"172.19.0.1"} 
+[2026-08-29 16:26:19] local.WARNING: Webhook hash verification failed {"tran_id":"9e55c7c4b4d9488a96db","ip":"172.19.0.1"} 
+[2026-08-29 16:30:03] local.WARNING: Webhook hash verification failed {"tran_id":"9e55c7c4b4d9488a96db","ip":"172.19.0.1"} 
+[2026-08-29 16:32:33] local.WARNING: Webhook missing tran_id or signature header {"query":"query IntrospectionQuery {
+      __schema {
+        
+        queryType { name }
+        mutationType { name }
+        subscriptionType { name }
+        types {
+          ...FullType
+        }
+        directives {
+          name
+          description
+          
+          locations
+          args {
+            ...InputValue
+          }
+        }
+      }
+    }
+
+    fragment FullType on __Type {
+      kind
+      name
+      description
+      
+      fields(includeDeprecated: true) {
+        name
+        description
+        args {
+          ...InputValue
+        }
+        type {
+          ...TypeRef
+        }
+        isDeprecated
+        deprecationReason
+      }
+      inputFields {
+        ...InputValue
+      }
+      interfaces {
+        ...TypeRef
+      }
+      enumValues(includeDeprecated: true) {
+        name
+        description
+        isDeprecated
+        deprecationReason
+      }
+      possibleTypes {
+        ...TypeRef
+      }
+    }
+
+    fragment InputValue on __InputValue {
+      name
+      description
+      type { ...TypeRef }
+      defaultValue
+      
+      
+    }
+
+    fragment TypeRef on __Type {
+      kind
+      name
+      ofType {
+        kind
+        name
+        ofType {
+          kind
+          name
+          ofType {
+            kind
+            name
+            ofType {
+              kind
+              name
+              ofType {
+                kind
+                name
+                ofType {
+                  kind
+                  name
+                  ofType {
+                    kind
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }"} 
+[2026-08-29 16:32:33] local.WARNING: Webhook missing tran_id or signature header {"query":"query IntrospectionQuery {
+      __schema {
+        
+        queryType { name }
+        mutationType { name }
+        subscriptionType { name }
+        types {
+          ...FullType
+        }
+        directives {
+          name
+          description
+          
+          locations
+          args {
+            ...InputValue
+          }
+        }
+      }
+    }
+
+    fragment FullType on __Type {
+      kind
+      name
+      description
+      
+      fields(includeDeprecated: true) {
+        name
+        description
+        args {
+          ...InputValue
+        }
+        type {
+          ...TypeRef
+        }
+        isDeprecated
+        deprecationReason
+      }
+      inputFields {
+        ...InputValue
+      }
+      interfaces {
+        ...TypeRef
+      }
+      enumValues(includeDeprecated: true) {
+        name
+        description
+        isDeprecated
+        deprecationReason
+      }
+      possibleTypes {
+        ...TypeRef
+      }
+    }
+
+    fragment InputValue on __InputValue {
+      name
+      description
+      type { ...TypeRef }
+      defaultValue
+      
+      
+    }
+
+    fragment TypeRef on __Type {
+      kind
+      name
+      ofType {
+        kind
+        name
+        ofType {
+          kind
+          name
+          ofType {
+            kind
+            name
+            ofType {
+              kind
+              name
+              ofType {
+                kind
+                name
+                ofType {
+                  kind
+                  name
+                  ofType {
+                    kind
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }"} 
+[2026-08-29 16:33:13] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:33:17] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 
+[2026-08-29 16:35:24] local.WARNING: Webhook hash verification failed {"tran_id":"17394277693","ip":"172.19.0.1"} 

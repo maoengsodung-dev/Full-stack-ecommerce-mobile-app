@@ -1,0 +1,8 @@
+[2026-04-26 10:09:30] local.INFO: PayWay payment initiated {"order_id":1,"tran_id":"426-V6WTPFLCZOO5","order_amount":"28.00","order_currency":"USD","payway_amount":"114800","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:11:02] local.INFO: PayWay payment initiated {"order_id":2,"tran_id":"426-FTUR1YO7E5MN","order_amount":"14.00","order_currency":"USD","payway_amount":"57400","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:17:12] local.INFO: PayWay payment initiated {"order_id":3,"tran_id":"426-P3EZKDVLOS7M","order_amount":"14.00","order_currency":"USD","payway_amount":"57400","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:30:42] local.INFO: PayWay payment initiated {"order_id":4,"tran_id":"426-LKQGNNEWQ4YZ","order_amount":"14.00","order_currency":"USD","payway_amount":"57400","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:33:18] local.INFO: PayWay payment initiated {"order_id":5,"tran_id":"426-9IVYAKQYJ2RT","order_amount":"14.00","order_currency":"USD","payway_amount":"57400","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:42:56] local.INFO: PayWay payment initiated {"order_id":6,"tran_id":"426-OO2P2JTOTH2I","order_amount":"14.00","order_currency":"USD","payway_amount":"57400","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:43:29] local.INFO: PayWay payment initiated {"order_id":7,"tran_id":"426-3NOWQUVKMV3L","order_amount":"14.00","order_currency":"USD","payway_amount":"57400","payway_currency":"KHR","mode":"production"} 
+[2026-04-26 10:53:53] local.INFO: PayWay payment initiated {"order_id":8,"tran_id":"426-Y5NSDMJX5XCI","order_amount":"28.00","order_currency":"USD","payway_amount":"114800","payway_currency":"KHR","mode":"production"} 

@@ -1,0 +1,2 @@
+[2026-09-04 15:05:16] local.INFO: PayWay payment initiated {"order_id":1,"tran_id":"904-FZLRT2FLDWHE","order_amount":"14.00","order_currency":"USD","payway_amount":"14.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-09-04 15:12:01] local.INFO: PayWay payment initiated {"order_id":2,"tran_id":"904-DRNHCLWXKJ6P","order_amount":"28.00","order_currency":"USD","payway_amount":"28.00","payway_currency":"USD","mode":"sandbox"} 

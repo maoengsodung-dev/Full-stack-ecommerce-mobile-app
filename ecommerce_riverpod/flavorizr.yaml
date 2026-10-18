@@ -1,0 +1,34 @@
+flavorizr:
+  flavors:
+    dev:
+      app:
+        name: "Project Dev"
+      variables:
+        baseUrl: "http://10.0.2.2:8000/api/v1"
+
+      android:
+        applicationId: "com.example.architecture_getx.dev"
+      ios:
+        bundleId: "com.example.architecture_getx.dev"
+
+    staging:
+      app:
+        name: "Project Staging"
+      variables:
+        baseUrl: "http://10.0.2.2:8000/api/v1"
+
+      android:
+        applicationId: "com.example.architecture_getx.staging"
+      ios:
+        bundleId: "com.example.architecture_getx.staging"
+
+    prod:
+      app:
+        name: "Project Prod"
+      variables:
+        baseUrl: "http://206.189.34.193/api/v1"
+
+      android:
+        applicationId: "com.example.architecture_getx.prod"
+      ios:
+        bundleId: "com.example.architecture_getx.prod"

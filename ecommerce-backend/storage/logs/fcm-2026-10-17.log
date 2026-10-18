@@ -1,0 +1,25 @@
+[2026-10-17 10:40:37] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Payment received"} 
+[2026-10-17 10:40:38] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Payment received"} 
+[2026-10-17 10:41:32] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order being prepared"} 
+[2026-10-17 10:41:32] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order being prepared"} 
+[2026-10-17 10:41:53] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order shipped"} 
+[2026-10-17 10:41:53] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 10:41:53] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 10:41:53] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order shipped"} 
+[2026-10-17 10:41:53] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 10:41:53] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 10:42:17] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order delivered"} 
+[2026-10-17 10:42:17] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order delivered"} 
+[2026-10-17 13:53:11] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-17 13:53:11] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-17 14:00:42] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"New Product in Store! 🔥"} 
+[2026-10-17 14:06:21] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order being prepared"} 
+[2026-10-17 14:06:21] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order being prepared"} 
+[2026-10-17 14:06:54] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order shipped"} 
+[2026-10-17 14:06:54] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 14:06:54] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 14:06:54] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order shipped"} 
+[2026-10-17 14:06:54] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 14:06:54] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Your order has shipped"} 
+[2026-10-17 14:08:55] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order delivered"} 
+[2026-10-17 14:08:55] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order delivered"} 

@@ -1,0 +1,5 @@
+[2026-10-04 15:10:54] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"New Product in Store! 🔥"} 
+[2026-10-04 15:15:40] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"New Product in Store! 🔥"} 
+[2026-10-04 15:36:56] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"New Product in Store! 🔥"} 
+[2026-10-04 15:38:05] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"New Product in Store! 🔥"} 
+[2026-10-04 15:47:14] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"Special Promotion! 🎉"} 

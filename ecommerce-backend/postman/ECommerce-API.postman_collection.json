@@ -1,0 +1,2084 @@
+{
+    "info": {
+        "_postman_id": "f7d6a9e3-1a4c-4b40-bf2b-5b7f1c2a7e9c",
+        "name": "ECommerce API (Laravel 11)",
+        "description": "Production-ready collection for the Laravel 11 e-commerce REST API. Sets `auth_token` automatically after login.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{auth_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://127.0.0.1:8000/api/v1"
+        },
+        {
+            "key": "auth_token",
+            "value": ""
+        },
+        {
+            "key": "admin_token",
+            "value": ""
+        },
+        {
+            "key": "category_id",
+            "value": "1"
+        },
+        {
+            "key": "category_slug",
+            "value": ""
+        },
+        {
+            "key": "product_id",
+            "value": "1"
+        },
+        {
+            "key": "product_slug",
+            "value": ""
+        },
+        {
+            "key": "cart_item_id",
+            "value": "1"
+        },
+        {
+            "key": "address_id",
+            "value": "1"
+        },
+        {
+            "key": "order_id",
+            "value": "1"
+        },
+        {
+            "key": "order_number",
+            "value": ""
+        },
+        {
+            "key": "image_id",
+            "value": "1"
+        },
+        {
+            "key": "tran_id",
+            "value": ""
+        },
+        {
+            "key": "banner_id",
+            "value": "1"
+        }
+    ],
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "register"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Phanith Demo\",\n  \"email\": \"phanith@example.com\",\n  \"phone\": \"+85510123456\",\n  \"password\": \"Customer123!\",\n  \"password_confirmation\": \"Customer123!\",\n  \"device_name\": \"postman\"\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "if (pm.response.code === 201) {",
+                                    "  const j = pm.response.json();",
+                                    "  if (j?.data?.token) pm.collectionVariables.set('auth_token', j.data.token);",
+                                    "}"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Login (Customer)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"customer@example.com\",\n  \"password\": \"Customer123!\",\n  \"device_name\": \"postman\"\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (j?.data?.token) pm.collectionVariables.set('auth_token', j.data.token);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Login (Admin)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin123!\",\n  \"device_name\": \"postman-admin\"\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (j?.data?.token) pm.collectionVariables.set('admin_token', j.data.token);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Refresh Token",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/refresh",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "refresh"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/logout",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "logout"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Forgot Password",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/forgot-password",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "forgot-password"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"email\": \"customer@example.com\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Reset Password",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/auth/reset-password",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "reset-password"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"token\": \"PASTE-TOKEN-HERE\",\n  \"email\": \"customer@example.com\",\n  \"password\": \"NewPass123!\",\n  \"password_confirmation\": \"NewPass123!\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Catalog",
+            "item": [
+                {
+                    "name": "List Products",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/products?per_page=20&search=&category=&min_price=&max_price=&featured=&in_stock=1&sort=-created_at",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "products"
+                            ],
+                            "query": [
+                                {
+                                    "key": "per_page",
+                                    "value": "20"
+                                },
+                                {
+                                    "key": "search",
+                                    "value": ""
+                                },
+                                {
+                                    "key": "category",
+                                    "value": ""
+                                },
+                                {
+                                    "key": "min_price",
+                                    "value": ""
+                                },
+                                {
+                                    "key": "max_price",
+                                    "value": ""
+                                },
+                                {
+                                    "key": "featured",
+                                    "value": ""
+                                },
+                                {
+                                    "key": "in_stock",
+                                    "value": "1"
+                                },
+                                {
+                                    "key": "sort",
+                                    "value": "-created_at"
+                                }
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (Array.isArray(j?.data) && j.data.length) {",
+                                    "  pm.collectionVariables.set('product_id', j.data[0].id);",
+                                    "  pm.collectionVariables.set('product_slug', j.data[0].slug);",
+                                    "  if (j.data[0].category?.id) pm.collectionVariables.set('category_id', j.data[0].category.id);",
+                                    "}"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Product by Slug",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/products/{{product_slug}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "products",
+                                "{{product_slug}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "List Categories (Tree)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/categories",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "categories"
+                            ]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (Array.isArray(j?.data) && j.data.length) {",
+                                    "  pm.collectionVariables.set('category_id', j.data[0].id);",
+                                    "  pm.collectionVariables.set('category_slug', j.data[0].slug);",
+                                    "  if (pm.environment) {",
+                                    "    pm.environment.set('category_id', j.data[0].id);",
+                                    "    pm.environment.set('category_slug', j.data[0].slug);",
+                                    "  }",
+                                    "}"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Category by Slug",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/categories/{{category_slug}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "categories",
+                                "{{category_slug}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "List Banners (Public)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/banners?position=home_slider",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners"
+                            ],
+                            "query": [
+                                {
+                                    "key": "position",
+                                    "value": "home_slider"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Banner (Public)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/banners/{{banner_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "banners",
+                                "{{banner_id}}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cart",
+            "item": [
+                {
+                    "name": "Get Cart",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cart",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cart"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Add Cart Item",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cart/items",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cart",
+                                "items"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"product_id\": {{product_id}},\n  \"quantity\": 1\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (j?.data?.id) pm.collectionVariables.set('cart_item_id', j.data.id);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Cart Item",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cart/items/{{cart_item_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cart",
+                                "items",
+                                "{{cart_item_id}}"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"quantity\": 3\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Remove Cart Item",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cart/items/{{cart_item_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cart",
+                                "items",
+                                "{{cart_item_id}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Clear Cart",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/cart",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "cart"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Wishlist",
+            "item": [
+                {
+                    "name": "List Wishlist",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/wishlist",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "wishlist"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Toggle Wishlist",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/wishlist/{{product_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "wishlist",
+                                "{{product_id}}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Addresses",
+            "item": [
+                {
+                    "name": "List Addresses",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/addresses",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "addresses"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Address",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/addresses",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "addresses"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"label\": \"Home\",\n  \"recipient_name\": \"Phanith Demo\",\n  \"phone\": \"+85510123456\",\n  \"country\": \"Cambodia\",\n  \"province\": \"Phnom Penh\",\n  \"district\": \"Chamkar Mon\",\n  \"commune\": \"Boeung Keng Kang 1\",\n  \"address_line_1\": \"#21, St. 360\",\n  \"postal_code\": \"12302\",\n  \"is_default\": true\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (j?.data?.id) pm.collectionVariables.set('address_id', j.data.id);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Address",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/addresses/{{address_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "addresses",
+                                "{{address_id}}"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"address_line_2\": \"Apartment 7B\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Make Default",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/addresses/{{address_id}}/default",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "addresses",
+                                "{{address_id}}",
+                                "default"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Address",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/addresses/{{address_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "addresses",
+                                "{{address_id}}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Orders",
+            "item": [
+                {
+                    "name": "Place Order",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/orders",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "orders"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"address_id\": {{address_id}},\n  \"note\": \"Please deliver in the morning\",\n  \"payment_method\": \"payway\"\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (j?.data?.order?.id) pm.collectionVariables.set('order_id', j.data.order.id);",
+                                    "if (j?.data?.order?.order_number) pm.collectionVariables.set('order_number', j.data.order.order_number);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "List My Orders",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/orders",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "orders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Order by Number",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/orders/{{order_number}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "orders",
+                                "{{order_number}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Cancel Order",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/orders/{{order_id}}/cancel",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "orders",
+                                "{{order_id}}",
+                                "cancel"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Device Tokens",
+            "item": [
+                {
+                    "name": "Register Device Token",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/device-tokens",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "device-tokens"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"token\": \"fcm-test-token-1234567890\",\n  \"platform\": \"android\",\n  \"app_version\": \"1.0.0\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Deregister Device Token",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/device-tokens",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "device-tokens"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"token\": \"fcm-test-token-1234567890\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin",
+            "auth": {
+                "type": "bearer",
+                "bearer": [
+                    {
+                        "key": "token",
+                        "value": "{{admin_token}}",
+                        "type": "string"
+                    }
+                ]
+            },
+            "item": [
+                {
+                    "name": "Categories",
+                    "item": [
+                        {
+                            "name": "List Categories (Admin)",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories?per_page=20&search=",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "per_page",
+                                            "value": "20"
+                                        },
+                                        {
+                                            "key": "search",
+                                            "value": ""
+                                        }
+                                    ]
+                                }
+                            },
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [
+                                            "const j = pm.response.json();",
+                                            "if (Array.isArray(j?.data) && j.data.length) {",
+                                            "  pm.collectionVariables.set('category_id', j.data[0].id);",
+                                            "  pm.collectionVariables.set('category_slug', j.data[0].slug);",
+                                            "  if (pm.environment) {",
+                                            "    pm.environment.set('category_id', j.data[0].id);",
+                                            "    pm.environment.set('category_slug', j.data[0].slug);",
+                                            "  }",
+                                            "}"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Show Category (Admin)",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories/{{category_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories",
+                                        "{{category_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Category",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"Smart Electronics\",\n  \"description\": \"Smart gadgets and tech gear\",\n  \"sort_order\": 1,\n  \"is_active\": true\n}"
+                                }
+                            },
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [
+                                            "if (pm.response.code === 201) {",
+                                            "  const j = pm.response.json();",
+                                            "  if (j?.data?.id) {",
+                                            "    pm.collectionVariables.set('category_id', j.data.id);",
+                                            "    pm.collectionVariables.set('category_slug', j.data.slug);",
+                                            "    if (pm.environment) {",
+                                            "      pm.environment.set('category_id', j.data.id);",
+                                            "      pm.environment.set('category_slug', j.data.slug);",
+                                            "    }",
+                                            "  }",
+                                            "}"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update Category (PUT)",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories/{{category_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories",
+                                        "{{category_id}}"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"Smart Electronics Pro\",\n  \"description\": \"Updated high performance electronics description\",\n  \"sort_order\": 5,\n  \"is_active\": true\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Category (PATCH)",
+                            "request": {
+                                "method": "PATCH",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories/{{category_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories",
+                                        "{{category_id}}"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"is_active\": false\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Category (Multipart / Image & Icon)",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories/{{category_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories",
+                                        "{{category_id}}"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "_method",
+                                            "value": "PUT",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "name",
+                                            "value": "Smart Electronics Pro",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "image",
+                                            "type": "file",
+                                            "src": ""
+                                        },
+                                        {
+                                            "key": "icon",
+                                            "type": "file",
+                                            "src": ""
+                                        },
+                                        {
+                                            "key": "is_active",
+                                            "value": "true",
+                                            "type": "text"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Category",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/categories/{{category_id}}?delete_products=false&reassign_to=&delete_subcategories=false",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "categories",
+                                        "{{category_id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "delete_products",
+                                            "value": "true",
+                                            "description": "Delete all products in this category together",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "reassign_to",
+                                            "value": "2",
+                                            "description": "Reassign all products to another category ID before deleting",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "delete_subcategories",
+                                            "value": "true",
+                                            "description": "Delete subcategories under this category",
+                                            "disabled": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Bulk Delete Categories",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/deleteAllCategories",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "deleteAllCategories"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ids\": [\n    {{category_id}}\n  ],\n  \"delete_products\": false,\n  \"reassign_to\": null\n}"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Products",
+                    "item": [
+                        {
+                            "name": "Create Product",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"name\": \"Bluetooth Speaker\",\n  \"description\": \"Compact wireless speaker.\",\n  \"short_description\": \"Loud, portable, water-resistant.\",\n  \"price\": 49.00,\n  \"sale_price\": 39.00,\n  \"stock\": 50,\n  \"category_id\": {{category_id}},\n  \"status\": \"active\",\n  \"is_featured\": true,\n  \"images\": [\n    { \"url\": \"products/speaker.jpg\", \"is_primary\": true }\n  ]\n}"
+                                }
+                            },
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "exec": [
+                                            "if (pm.response.code === 201) {",
+                                            "  const j = pm.response.json();",
+                                            "  if (j?.data?.id) {",
+                                            "    pm.collectionVariables.set('product_id', j.data.id);",
+                                            "    pm.collectionVariables.set('product_slug', j.data.slug);",
+                                            "    if (pm.environment) {",
+                                            "      pm.environment.set('product_id', j.data.id);",
+                                            "      pm.environment.set('product_slug', j.data.slug);",
+                                            "    }",
+                                            "  }",
+                                            "}"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update Product",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products/{{product_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products",
+                                        "{{product_id}}"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"price\": 59.00\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Product",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products/{{product_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products",
+                                        "{{product_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Add Variant",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products/{{product_id}}/variants",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products",
+                                        "{{product_id}}",
+                                        "variants"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"sku\": \"BT-SPEAKER-RED\",\n  \"size\": \"M\",\n  \"color\": \"Red\",\n  \"price_offset\": 5,\n  \"stock\": 25,\n  \"is_active\": true\n}"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Upload Product Image",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products/{{product_id}}/images",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products",
+                                        "{{product_id}}",
+                                        "images"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "image",
+                                            "type": "file",
+                                            "src": ""
+                                        },
+                                        {
+                                            "key": "alt",
+                                            "value": "Speaker Side View",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "is_primary",
+                                            "value": "false",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "sort_order",
+                                            "value": "1",
+                                            "type": "text"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Product Image",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products/{{product_id}}/images/{{image_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products",
+                                        "{{product_id}}",
+                                        "images",
+                                        "{{image_id}}"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "_method",
+                                            "value": "PUT",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "image",
+                                            "type": "file",
+                                            "src": ""
+                                        },
+                                        {
+                                            "key": "is_primary",
+                                            "value": "true",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "sort_order",
+                                            "value": "0",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "alt",
+                                            "value": "Speaker Main View",
+                                            "type": "text"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Product Image",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/products/{{product_id}}/images/{{image_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "products",
+                                        "{{product_id}}",
+                                        "images",
+                                        "{{image_id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Orders",
+                    "item": [
+                        {
+                            "name": "List Orders",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/orders?status=&payment_status=&per_page=25",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "orders"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "status",
+                                            "value": ""
+                                        },
+                                        {
+                                            "key": "payment_status",
+                                            "value": ""
+                                        },
+                                        {
+                                            "key": "per_page",
+                                            "value": "25"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Order Status",
+                            "request": {
+                                "method": "PATCH",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/orders/{{order_id}}/status",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "orders",
+                                        "{{order_id}}",
+                                        "status"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"status\": \"shipped\",\n  \"tracking_number\": \"TRK123456\"\n}"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Banners",
+                    "item": [
+                        {
+                            "name": "List Banners (Admin)",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/banners?per_page=20&search=",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "banners"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "per_page",
+                                            "value": "20"
+                                        },
+                                        {
+                                            "key": "search",
+                                            "value": ""
+                                        },
+                                        {
+                                            "key": "position",
+                                            "value": "home_slider",
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "is_active",
+                                            "value": "true",
+                                            "disabled": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Banner (Admin)",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/banners/{{banner_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "banners",
+                                        "{{banner_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Banner (Multipart File)",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "title",
+                                            "value": "Super Deals 2026",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "subtitle",
+                                            "value": "Save up to 40%",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "image",
+                                            "type": "file",
+                                            "src": ""
+                                        },
+                                        {
+                                            "key": "link_type",
+                                            "value": "category",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "link_id",
+                                            "value": "15",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "position",
+                                            "value": "home_slider",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "sort_order",
+                                            "value": "1",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "is_active",
+                                            "value": "1",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/admin/banners",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "banners"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Banner (JSON / URL)",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"title\": \"Weekend Mega Flash Sale\",\n  \"subtitle\": \"Top discounts across all categories\",\n  \"image\": \"https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da\",\n  \"link_type\": \"category\",\n  \"link_id\": \"15\",\n  \"position\": \"home_slider\",\n  \"sort_order\": 1,\n  \"is_active\": true\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/admin/banners",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "banners"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Banner",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"title\": \"Updated Banner Title\",\n  \"subtitle\": \"Updated subtitle description\",\n  \"sort_order\": 2,\n  \"is_active\": true\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/admin/banners/{{banner_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "banners",
+                                        "{{banner_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Banner",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/admin/banners/{{banner_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "banners",
+                                        "{{banner_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Bulk Delete Banners",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ids\": [1, 2]\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/admin/deleteAllBanners",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "admin",
+                                        "deleteAllBanners"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Payments",
+            "item": [
+                {
+                    "name": "Create PayWay Payment",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/payments/payway/create",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "payments",
+                                "payway",
+                                "create"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"order_id\": {{order_id}}\n}"
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const j = pm.response.json();",
+                                    "if (j?.data?.tran_id) {",
+                                    "  pm.collectionVariables.set('tran_id', j.data.tran_id);",
+                                    "  if (pm.environment) pm.environment.set('tran_id', j.data.tran_id);",
+                                    "}"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Check PayWay Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/payments/payway/status/{{tran_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "payments",
+                                "payway",
+                                "status",
+                                "{{tran_id}}"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "PayWay Webhook (Simulate)",
+                    "description": "Replicates ABA PayWay's webhook callback. Server verifies the hash before processing.",
+                    "request": {
+                        "auth": {
+                            "type": "noauth"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/payments/webhook/payway",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "payments",
+                                "webhook",
+                                "payway"
+                            ]
+                        },
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "tran_id",
+                                    "value": "REPLACE-WITH-TRAN-ID"
+                                },
+                                {
+                                    "key": "status_code",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "amount",
+                                    "value": "10.00"
+                                },
+                                {
+                                    "key": "hash",
+                                    "value": "REPLACE-WITH-COMPUTED-HASH"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

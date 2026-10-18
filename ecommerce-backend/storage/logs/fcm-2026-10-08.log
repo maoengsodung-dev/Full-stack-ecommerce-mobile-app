@@ -1,0 +1,5 @@
+[2026-10-08 14:46:26] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"Special Promotion: New Promotion 🎉"} 
+[2026-10-08 17:03:14] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-08 17:03:14] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-08 17:52:07] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-08 17:52:07] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 

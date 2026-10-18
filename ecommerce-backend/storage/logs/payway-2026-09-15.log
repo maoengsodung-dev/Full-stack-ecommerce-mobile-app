@@ -1,0 +1,3 @@
+[2026-09-15 16:25:42] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"902-VDEPC2OY8DCZ","status_code":"0","amount":"10.00","hash":"asmxtH9/wek5qEUfreO86L2XWdfPx164ujP6SnkOI5L9S87CA2UPz45UDQTmQnMBg5uQsLsVAY4BGvI0Th+dGA=="} 
+[2026-09-15 17:03:58] local.INFO: PayWay payment initiated {"order_id":18,"tran_id":"915-GE4TYSARTLUP","order_amount":"14.00","order_currency":"USD","payway_amount":"14.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-09-15 17:12:14] local.INFO: PayWay payment initiated {"order_id":19,"tran_id":"915-FGBNCKJX7RZ2","order_amount":"69.00","order_currency":"USD","payway_amount":"69.00","payway_currency":"USD","mode":"sandbox"} 

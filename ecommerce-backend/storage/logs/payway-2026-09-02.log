@@ -1,0 +1,14 @@
+[2026-09-02 03:25:37] local.INFO: PayWay payment initiated {"order_id":1,"tran_id":"902-76CQ2DYW9LXH","order_amount":"39.00","order_currency":"USD","payway_amount":"39.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-09-02 04:06:32] local.WARNING: Webhook missing tran_id or signature header  
+[2026-09-02 04:06:33] local.WARNING: Webhook missing tran_id or signature header  
+[2026-09-02 04:14:18] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-09-02 04:29:25] local.INFO: PayWay payment initiated {"order_id":1,"tran_id":"902-VDEPC2OY8DCZ","order_amount":"249.00","order_currency":"USD","payway_amount":"249.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-09-02 04:29:59] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-09-02 04:30:14] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"REPLACE-WITH-TRAN-ID","status_code":"0","amount":"10.00","hash":"REPLACE-WITH-COMPUTED-HASH"} 
+[2026-09-02 04:30:38] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"1","status_code":"0","amount":"10.00","hash":"344e"} 
+[2026-09-02 04:32:04] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"902-VDEPC2OY8DCZ","status_code":"0","amount":"10.00","hash":"asmxtH9/wek5qEUfreO86L2XWdfPx164ujP6SnkOI5L9S87CA2UPz45UDQTmQnMBg5uQsLsVAY4BGvI0Th+dGA=="} 
+[2026-09-02 04:32:06] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"902-VDEPC2OY8DCZ","status_code":"0","amount":"10.00","hash":"asmxtH9/wek5qEUfreO86L2XWdfPx164ujP6SnkOI5L9S87CA2UPz45UDQTmQnMBg5uQsLsVAY4BGvI0Th+dGA=="} 
+[2026-09-02 04:32:56] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"902-VDEPC2OY8DCZ","status_code":"pending","amount":"10.00","hash":"asmxtH9/wek5qEUfreO86L2XWdfPx164ujP6SnkOI5L9S87CA2UPz45UDQTmQnMBg5uQsLsVAY4BGvI0Th+dGA=="} 
+[2026-09-02 04:33:00] local.WARNING: Webhook missing tran_id or signature header {"tran_id":"902-VDEPC2OY8DCZ","status_code":"1","amount":"10.00","hash":"asmxtH9/wek5qEUfreO86L2XWdfPx164ujP6SnkOI5L9S87CA2UPz45UDQTmQnMBg5uQsLsVAY4BGvI0Th+dGA=="} 
+[2026-09-02 04:59:21] local.INFO: PayWay payment initiated {"order_id":2,"tran_id":"902-XJXYNJO0JTQY","order_amount":"69.00","order_currency":"USD","payway_amount":"69.00","payway_currency":"USD","mode":"sandbox"} 
+[2026-09-02 06:42:01] local.INFO: PayWay payment initiated {"order_id":3,"tran_id":"902-ECLJ83KXMUIY","order_amount":"14.00","order_currency":"USD","payway_amount":"14.00","payway_currency":"USD","mode":"sandbox"} 

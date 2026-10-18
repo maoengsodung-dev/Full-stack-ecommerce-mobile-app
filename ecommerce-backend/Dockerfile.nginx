@@ -1,0 +1,15 @@
+FROM nginx:1.25-alpine
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy SSL certificates (for production)
+# COPY ssl /etc/nginx/ssl
+
+# Copy public assets from build context
+COPY public public/
+
+EXPOSE 80
+# EXPOSE 443
+
+CMD ["nginx", "-g", "daemon off;"]

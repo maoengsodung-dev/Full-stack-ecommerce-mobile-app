@@ -1,0 +1,10 @@
+[2026-10-15 00:21:04] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-15 00:21:04] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-15 00:27:19] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"New Product in Store! 🔥"} 
+[2026-10-15 00:32:50] local.WARNING: FCM credentials not found; push notification to topic recorded in log only. {"topic":"all","title":"Special Promotion! 🎉"} 
+[2026-10-15 00:37:08] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-15 00:37:08] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-15 00:42:08] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-15 00:42:08] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order update"} 
+[2026-10-15 00:42:32] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order cancelled"} 
+[2026-10-15 00:42:32] local.WARNING: FCM credentials not found; push notification recorded in log only. {"user_id":6,"title":"Order cancelled"} 
