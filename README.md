@@ -11,28 +11,35 @@ A complete, production-ready **Full-Stack E-Commerce Suite** consisting of two m
 
 ---
 
+## 📚 Project Documentation
+
+Each component within this monorepo has its own comprehensive documentation:
+
+| Project | Technology | Details & Architecture | Readme Link |
+| :--- | :--- | :--- | :---: |
+| 📱 **`architecture_getx/`** | Flutter 3.10+, GetX, Dio | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay. | [📖 View Readme](architecture_getx/README.md) |
+| 📱 **`ecommerce_riverpod/`** | Flutter 3.10+, Riverpod 2.x, Dio | Riverpod Notifiers, Immutable State, Clean Architecture + Feature-First (DDD), and Route Guards. | [📖 View Readme](ecommerce_riverpod/README.md) |
+| 🌐 **`ecommerce-backend/`** | Laravel 11, PHP 8.3, MySQL, Redis | Full REST API, Sanctum Auth, Spatie Roles, FCM Notifications, PayWay Webhooks, and Docker. | [📖 View Readme](ecommerce-backend/README.md) |
+
+---
+
 ## 📦 Projects Overview
 
 This repository is organized as a multi-project monorepo containing three core components:
 
 ```
 E-commerce-mobile-app/
-├── architecture_getx/   # 📱 Flutter Mobile App (GetX Clean Architecture)
-├── ecommerce_riverpod/  # 📱 Flutter Mobile App (Riverpod 2.x Feature-First)
-└── ecommerce-backend/   # 🌐 Backend REST API (Laravel 11, MySQL, Docker)
+├── 📱 architecture_getx/    ──► [View README.md](architecture_getx/README.md)    (Flutter GetX Architecture)
+├── 📱 ecommerce_riverpod/   ──► [View README.md](ecommerce_riverpod/README.md)   (Flutter Riverpod Architecture)
+└── 🌐 ecommerce-backend/    ──► [View README.md](ecommerce-backend/README.md)    (Laravel 11 REST API Backend)
 ```
-
-| Component | Technology | Description | Documentation |
-| :--- | :--- | :--- | :--- |
-| **`architecture_getx/`** | Flutter 3.10+, Dart 3, GetX, Dio | Mobile storefront & Admin dashboard built with GetX reactive state management, runtime DI, and GetPage routing. | [Read README](architecture_getx/README.md) |
-| **`ecommerce_riverpod/`** | Flutter 3.10+, Dart 3, Riverpod 2.x, Dio | Companion mobile application built with compile-time safe Riverpod state management, Clean Architecture + Feature-First (DDD). | [Read README](ecommerce_riverpod/README.md) |
-| **`ecommerce-backend/`** | Laravel 11, PHP 8.2+, MySQL, Docker | Full REST API handling authentication, product catalog, categories, orders, carts, notifications, and ABA PayWay webhooks. | [Read README](ecommerce-backend/README.md) |
 
 ---
 
 ## ✨ System Features
 
 ### 🛍️ Mobile Applications (Flutter)
+
 - **Dual Architecture Implementations**: Compare side-by-side GetX vs Riverpod 2.x on identical business requirements.
 - **Customer Storefront**:
   - Interactive catalog, dynamic banners carousel, horizontal category selector.
@@ -56,6 +63,7 @@ E-commerce-mobile-app/
   - 6 languages supported: English (`en`), Khmer (`km` with Google Fonts Battambang), Japanese (`ja`), Korean (`ko`), Vietnamese (`vi`), Chinese (`zh`).
 
 ### 🌐 Backend Services (Laravel 11)
+
 - Token-based API authentication (Sanctum / JWT).
 - Role-based Access Control (Customer vs Admin).
 - Relational schema with migrations, factories, and seeders.
@@ -67,6 +75,7 @@ E-commerce-mobile-app/
 ## 🚀 Quick Start Guide
 
 ### 1. Backend Setup (`ecommerce-backend`)
+
 ```bash
 cd ecommerce-backend
 composer install
@@ -76,7 +85,8 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-### 2. Mobile App Setup (`architecture_getx` or `ecommerce_riverpod`)
+### 2. Mobile App Setup (`ecommerce_getx` or `ecommerce_riverpod`)
+
 ```bash
 # Choose either client:
 cd architecture_getx
