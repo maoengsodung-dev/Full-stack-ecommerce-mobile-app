@@ -2,8 +2,8 @@
 
 [![Flutter](https://img.shields.io/badge/Flutter-%5E3.10.4-blue.svg?logo=flutter)](https://flutter.dev)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg?logo=laravel)](https://laravel.com)
-[![GetX](https://img.shields.io/badge/Architecture-GetX-brightgreen.svg)](architecture_getx/README.md)
-[![Riverpod](https://img.shields.io/badge/Architecture-Riverpod%202.x-0553B1.svg)](ecommerce_riverpod/README.md)
+[![GetX](https://img.shields.io/badge/Architecture-GetX-brightgreen.svg)](./architecture_getx/README.md)
+[![Riverpod](https://img.shields.io/badge/Architecture-Riverpod%202.x-0553B1.svg)](./ecommerce_riverpod/README.md)
 [![Payment](https://img.shields.io/badge/Payment-ABA%20PayWay%20(KHQR)-005F86.svg)](https://www.ababank.com)
 [![Firebase](https://img.shields.io/badge/Firebase-FCM%20%7C%20Auth%20%7C%20Firestore-orange.svg?logo=firebase)](https://firebase.google.com)
 
@@ -17,22 +17,24 @@ Each component within this monorepo has its own comprehensive documentation:
 
 | Project | Technology | Details & Architecture | Readme Link |
 | :--- | :--- | :--- | :---: |
-| 📱 **`architecture_getx/`** | Flutter 3.10+, GetX, Dio | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay. | [📖 View Readme](architecture_getx/README.md) |
-| 📱 **`ecommerce_riverpod/`** | Flutter 3.10+, Riverpod 2.x, Dio | Riverpod Notifiers, Immutable State, Clean Architecture + Feature-First (DDD), and Route Guards. | [📖 View Readme](ecommerce_riverpod/README.md) |
-| 🌐 **`ecommerce-backend/`** | Laravel 11, PHP 8.3, MySQL, Redis | Full REST API, Sanctum Auth, Spatie Roles, FCM Notifications, PayWay Webhooks, and Docker. | [📖 View Readme](ecommerce-backend/README.md) |
+| [📱 **`architecture_getx/`**](./architecture_getx/README.md) | Flutter 3.10+, GetX, Dio | GetX Reactive State, Dependency Injection, GetPage routes, Admin Control Tower, and ABA PayWay. | [📖 **View Readme**](./architecture_getx/README.md) |
+| [📱 **`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) | Flutter 3.10+, Riverpod 2.x, Dio | Riverpod Notifiers, Immutable State, Clean Architecture + Feature-First (DDD), and Route Guards. | [📖 **View Readme**](./ecommerce_riverpod/README.md) |
+| [🌐 **`ecommerce-backend/`**](./ecommerce-backend/README.md) | Laravel 11, PHP 8.3, MySQL, Redis | Full REST API, Sanctum Auth, Spatie Roles, FCM Notifications, PayWay Webhooks, and Docker. | [📖 **View Readme**](./ecommerce-backend/README.md) |
 
 ---
 
-## 📦 Projects Overview
+## 📦 Projects Overview & Direct Links
 
-This repository is organized as a multi-project monorepo containing three core components:
+Click any project link below to view its complete documentation:
 
-```
-E-commerce-mobile-app/
-├── 📱 architecture_getx/    ──► [View README.md](architecture_getx/README.md)    (Flutter GetX Architecture)
-├── 📱 ecommerce_riverpod/   ──► [View README.md](ecommerce_riverpod/README.md)   (Flutter Riverpod Architecture)
-└── 🌐 ecommerce-backend/    ──► [View README.md](ecommerce-backend/README.md)    (Laravel 11 REST API Backend)
-```
+- 📱 [**`architecture_getx/`**](./architecture_getx/README.md) — *Flutter Mobile App (GetX Clean Architecture)*  
+  👉 **[📖 Open `architecture_getx/README.md`](./architecture_getx/README.md)**
+
+- 📱 [**`ecommerce_riverpod/`**](./ecommerce_riverpod/README.md) — *Flutter Mobile App (Riverpod 2.x Feature-First Architecture)*  
+  👉 **[📖 Open `ecommerce_riverpod/README.md`](./ecommerce_riverpod/README.md)**
+
+- 🌐 [**`ecommerce-backend/`**](./ecommerce-backend/README.md) — *Backend REST API (Laravel 11, MySQL, Redis, Docker)*  
+  👉 **[📖 Open `ecommerce-backend/README.md`](./ecommerce-backend/README.md)**
 
 ---
 
@@ -74,7 +76,7 @@ E-commerce-mobile-app/
 
 ## 🚀 Quick Start Guide
 
-### 1. Backend Setup (`ecommerce-backend`)
+### 1. Backend Setup ([`ecommerce-backend/`](./ecommerce-backend/README.md))
 
 ```bash
 cd ecommerce-backend
@@ -85,7 +87,7 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-### 2. Mobile App Setup (`ecommerce_getx` or `ecommerce_riverpod`)
+### 2. Mobile App Setup ([`architecture_getx/`](./architecture_getx/README.md) or [`ecommerce_riverpod/`](./ecommerce_riverpod/README.md))
 
 ```bash
 # Choose either client:
