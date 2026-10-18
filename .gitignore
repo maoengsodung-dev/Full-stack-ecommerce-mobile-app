@@ -1,0 +1,32 @@
+# Flutter & Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.lock
+
+# IDEs & Editors
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Environment & Secrets
+.env
+!.env.example
+*.pem
+*.keystore
+*.jks
+
+# Logs & Temp
+*.log
+.artifacts/
+.system_generated/
+tmp/
+temp/
+
+# OS specific
+.DS_Store
+Thumbs.db
