@@ -32,6 +32,7 @@ void main() async {
       Flavor.prod => DefaultFirebaseOptionsProd.currentPlatform,
     },
   );
+  
 
   // Initialize storage & router middleware
   final storageService = StorageService();
